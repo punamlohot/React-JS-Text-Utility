@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const TextArea = () => {
   const [text, setText] = useState("Enter Text Here");
-  console.log(text);
+  //console.log(text);
   //------------------------------------------------------------------------------------------------------------------
   //We have created a text variable and "enter text here" is the initial value of this text variable.
   //setText is a function used to update the value of text.
@@ -70,19 +70,22 @@ const TextArea = () => {
     <div className="App">
       <div className="App-body">
         <div className="container mt-3">
-          <h2>TEXT UTILITY USING REACT</h2>
+          <h2 className="header">SIMPLE TEXT UTILITY</h2>
           <form action="/action_page.php">
             <div className="mb-3 mt-3">
               <label htmlFor="comment"></label>
               <textarea style={mode} className="form-control" rows="7" id="comment" value={text} onChange={handleChange} name="text"></textarea>
+              <div className="wordcount">
               <b><span id="wordCount">Word Count: </span></b>
-              <br /><br/>
-              <button type="button" className="btn btn-primary" onClick={Uppercase}>toUppercase</button>&nbsp;&nbsp;
-              <button type="button" className="btn btn-primary" onClick={Lowercase}>toLowercase</button>&nbsp;&nbsp;
-              <button type="button" className="btn btn-primary" onClick={Count}>No Of Characters</button>&nbsp;&nbsp;
-              <button type="button" className="btn btn-primary" onClick={getCount}>No Of Words</button>&nbsp;&nbsp;
-              <button type="button" className="btn btn-primary" onClick={ClearAll}>Clear All</button>&nbsp;&nbsp;
-              <button type="button" className="btn btn-primary" onClick={toggleMode}>ChangeMode</button>
+              </div>
+              <div className="tabs">
+              <button type="button" className="btn" id="but" onClick={Uppercase}>toUppercase</button>
+              <button type="button" className="btn" id="but" onClick={Lowercase}>toLowercase</button>
+              <button type="button" className="btn" id="but" onClick={Count}>No Of Characters</button>
+              <button type="button" className="btn" id="but" onClick={getCount}>No Of Words</button>
+              <button type="button" className="btn" id="but" onClick={ClearAll}>Clear All</button>
+              <button type="button" className="btn" id="but" onClick={toggleMode}>ChangeMode</button>
+              </div>
             </div>
           </form>
         </div>
